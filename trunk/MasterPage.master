@@ -1,0 +1,69 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="TechTheme" %>
+<%@ Register Src="Controls/ArchiveView.ascx" TagName="ArchiveView" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <link rel="stylesheet" href="css/Techmania.css" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrap">
+
+		<div id="header">
+		
+			<h1 id="logo-text">anderson<span class="gray">central</span></h1>			
+			<h2 id="slogan">The source for all things anderson</h2>	
+					
+			<div id="header-tabs">
+				<ul>
+					<li id="current"><a href="/default.aspx"><span>Home</span></a></li>
+					<li><a href="/gallery.aspx"><span>Gallery</span></a></li>
+					<li><a href="/protected/downloads.aspx"><span>Downloads</span></a></li>
+				</ul>
+			</div>				
+			
+		</div>
+	  
+	  <!-- content-wrap starts here -->
+	  <div id="content-wrap">
+	  
+	  		<div id="main"> &nbsp;<asp:LoginStatus ID="LoginStatus1" runat="server" />
+                  
+                <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                </asp:contentplaceholder>
+	  		</div> 	
+			  
+	  		<div id="sidebar">
+					
+				<h1>Menu</h1>				
+                  <asp:Menu ID="Menu1" runat="server" CssClass="sidemenu" DataSourceID="SiteMapDataSource1"
+                      Width="183px">
+                  </asp:Menu>
+                  <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                  <uc1:ArchiveView id="ArchiveView1" runat="server">
+                  </uc1:ArchiveView></div>	
+					<!-- content-wrap ends here --></div>
+		
+		<div id="footer">
+		
+			<span id="footer-left">
+				&copy; 2007 <strong>andersoncentral.org</strong> | 
+			</span>		
+			
+			<span id="footer-right">
+				<a href="/default.aspx">Home</a> | <a href="/gallery.aspx">Photo Gallery</a> | <a href="/protected/downloads.aspx">Downloads</a> 
+			</span>
+			
+		</div>	
+
+</form>
+    		
+
+<!-- wrap ends here -->	
+	
+	
+</body>
+</html>
